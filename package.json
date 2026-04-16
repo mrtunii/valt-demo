@@ -1,0 +1,19 @@
+{
+  "name": "valt-demo-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tiny Express app for dogfooding Valt — intentionally has known vulnerabilities and a Stripe SDK reference so the detection engine + SCA + secrets scanners all light up.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "lodash": "4.17.10",
+    "stripe": "10.0.0",
+    "pg": "8.11.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
