@@ -1,0 +1,16 @@
+name: Valt
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  valt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Valt
+        # Local dev: point at the cloudflared tunnel URL through a repo
+        # variable. In prod this would be `valthq/valt-action@v1`.
+        uses: valthq/valt-action@v0.1.0
+        with:
+          api-key: ${{ secrets.VALT_API_KEY }}
+          api-url: ${{ vars.VALT_API_URL }}
